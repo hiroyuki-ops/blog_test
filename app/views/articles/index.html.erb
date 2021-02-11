@@ -1,2 +1,10 @@
-<h1>ブログ</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<div class="container">
+  <h1 class="text-center">ブログ</h1>
+  <% @articles.each do |article| %>
+  <div class="col-md-4 margin-top-5per">
+  	<%= image_tag 'hukurou.jpeg', class: "img-responsive" %>
+  	<p class="title"><%= article.title %></p>
+    <%= article.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+  </div>
+  <% end %>
+</div>

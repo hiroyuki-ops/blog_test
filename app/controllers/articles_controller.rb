@@ -1,11 +1,12 @@
 class ArticlesController < ApplicationController
-  before_action :find_post, only: (:show :edit :update :destroy)
+  before_action :find_article, only: [:show, :edit, :update, :destroy]
+
   def index
-  	@posts = Post.order(created_at: :desc)
+  	@articles = Article.order(created_at: :desc)
   end
 
   def show
-  	@post = Post.find(params[:id])
+  	@article = Article.find(params[:id])
   end
 
   def edit
@@ -29,6 +30,7 @@ class ArticlesController < ApplicationController
   		redirect_to @artilce, notice: '更新に成功しました。'
   	else
   		render :edit, alert: '更新できませんでした。'
+  	end
   end
 
   def destroy
