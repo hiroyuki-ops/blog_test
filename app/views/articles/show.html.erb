@@ -1,2 +1,12 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div class="container">
+	<div class="col-md-4 margin-top-5per article-back">
+		<%= image_tag 'hukurou.jpeg', class: "article-image padding-top-15" %>
+		<h1 class="text-center"><%= @article.title %></h1>
+		<div class="padding-bottom-15">
+		  <p class="title"><%= @article.title %></p>
+		  <span class="text-right">
+		  	<%= @article.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+		  </span>
+		</div>
+	</div>
+</div>
