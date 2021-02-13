@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <title>BlogTest</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=10.0, user-scalable=yes">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <nav>
+          <a class="navbar-brand" href="#">ブログ</a>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home", %></li>
+            <li><%= link_to "Help", %></li>
+            <li><%= link_to "Log in", '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     <%= yield %>
   </body>
 </html>
