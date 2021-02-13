@@ -47,6 +47,6 @@ class ArticlesController < ApplicationController
   end
 
   def artilce_params
-  	
+  	params.repuire(:article).permit(:title, :body)
   end
 end
