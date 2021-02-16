@@ -1,12 +1,29 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <nav>
+      <div>
       <a class="navbar-brand" href="#">ブログ</a>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", %></li>
         <li><%= link_to "Help", %></li>
         <li><%= link_to "Log in", '#' %></li>
       </ul>
+      </div>
+      <div>
+        <% if user_signed_in? %>
+          <a class="navbar-brand" href="/">ひろブログ</a>
+        <% else %>
+          <a class="navbar-brand" href="/">ブログサービス</a>
+        <% end %>
+      </div>
     </nav>
+    <div class="cllapse navbar-collapse" id="navigation">
+      <% if user_signed_in? %>
+        <%= link_to '新規作成' new_article_path %>
+      <% else %>
+        <%= link_to 'ユーザー登録' new_registrations_path %>
+        <%= link_to 'ログイン' new_sessions_path %>
+      <% end %>
+    </div>
   </div>
 </header>
