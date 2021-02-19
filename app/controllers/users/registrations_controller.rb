@@ -11,8 +11,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   POST /resource
    def create
-    puts "====#{resource.inspect}===="
     super
+    if resource
+      resource == user
+      profile = Profile.new
+      profile.user_id = resource.id
+      profile.name = params[:profile][:name]
+      profile.save
+      resource.profile.create(name: params[:profile][:name])
+    end
+    puts "====#{params[:profile][:name]}===="
    end
 
   # GET /resource/edit
