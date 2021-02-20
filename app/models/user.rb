@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :profile, dependent: :destroy
+
+  delegate :name, to: :profile, prefix: :auther, allow_nil: true
 end
