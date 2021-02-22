@@ -45,12 +45,12 @@ class ArticlesController < ApplicationController
   end
 
   private
-  def find_post
-  	@post = Post.find(params[:id])
+  def find_article
+  	@article = Article.find(params[:id])
   end
 
   def artilce_params
-  	params.repuire(:article).permit(:title, :body)
+  	params.repuire(:article).permit(:title, :body, :image)
   end
 
   def validate_user
