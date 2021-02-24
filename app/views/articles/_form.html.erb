@@ -1,5 +1,9 @@
 <% form_for article do %>
 
+　<div class="form-group padding-to-15">
+	<%= image_tag 'no-image.jpeg', class: 'article-image' %>
+  </div>
+
   <div class="form-group padding-top-15">
   	<%= f.attachment_field :image %>
   </div>
