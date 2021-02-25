@@ -39,3 +39,23 @@ a{
   height: 150px;
   object-fit: cover;
 }
+
+#cover-image{
+  cursor: pointer;
+}
+
+.relative{
+  position: relative;
+
+  i {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    color: white;
+    font-size: 60px;
+  }
+}
+
+#article_image{
+    display: none;
+  }

@@ -1,8 +1,15 @@
 <% form_for article do %>
 
-　<div class="form-group padding-to-15">
-	<%= image_tag 'no-image.jpeg', class: 'article-image' %>
+　<div id="cover-image" class="form-group padding-to-15 relative">
+	<% if article.image_id.present? %>
+	  <%= image_tag attachment_url(article, :image), class: 'article-image' %>
+	<% else %>
+	  <%= image_tag 'no-image.jpeg', class: 'article-image' %>
+	<% end %>
+	<i class="fa fa-camera"></i>
   </div>
+
+  <%= f.attachment_field :image %>
 
   <div class="form-group padding-top-15">
   	<%= f.attachment_field :image %>
